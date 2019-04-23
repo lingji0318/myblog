@@ -1,0 +1,132 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 2019/4/22
+  Time: 17:00
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>toufang</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-8 column">
+                    <h3>
+                        投放接口
+                    </h3>
+
+                    <textarea cols="100" rows="10"></textarea>
+                    <div class="row clearfix">
+
+                        <div class="col-md-12 column">
+                            <button type="button" class="btn btn-default btn-info">调用</button>
+                        </div>
+
+                    </div>
+                    <textarea cols="100" rows="10"></textarea>
+                </div>
+                <div class="col-md-4 column">
+                    <h3>
+                        接口参数
+                    </h3>
+                    <pre id="out_pre"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+    var toufang_json = '{\n' +
+        '                        "id": "y051-test-t24-1468477072-0-605",\n' +
+        '                        "site": {\n' +
+        '                        "name": "youku",\n' +
+        '                        "ref": "",\n' +
+        '                        "content": {\n' +
+        '                        "title": "jumutest"\n' +
+        '                        },\n' +
+        '                        "page": "https://www.youku.com",\n' +
+        '                        "cat": [\n' +
+        '                        "IAB1",\n' +
+        '                        "IAB2",\n' +
+        '                        "IAB3"\n' +
+        '                        ]\n' +
+        '                        },\n' +
+        '                        "device": {\n' +
+        '                        "devicetype": 0,\n' +
+        '                        "reqlip": "59.108.32.2",\n' +
+        '                        "ip": "59.108.43.2",\n' +
+        '                        "ua": "Mozilla/5.0(iPhone;CPUiPhoneOS6_0likeMacOSX)AppleWebKit/536.26(KHTML,likeGecko)Version/6.0Mobile/10A403Safari/8536.25",\n' +
+        '                        "didmd5": "04752ed011e4d27caf12a79a94d2029f",\n' +
+        '                        "dpidmd5": "2FB25AAC4555D7FFC89CA998CCE00ECC",\n' +
+        '                        "os": "Android",\n' +
+        '                        "ext": {\n' +
+        '                        "idfa": "8B6A3BFA-3E4A-4CFC-A2B1-2BBDD9A01C39",\n' +
+        '                        "mac": "DC7D41E352D13D60765414D53F40BC25",\n' +
+        '                        "macmd5": "DC7D41E352D13D60765414D53F40BC25"\n' +
+        '                        }\n' +
+        '                        },\n' +
+        '                        "user": {},\n' +
+        '                        "app": {\n' +
+        '                        "name": "test_app",\n' +
+        '                        "ext": {\n' +
+        '                        "deeplink": 0\n' +
+        '                        },\n' +
+        '                        "bundle": "com.test.cn",\n' +
+        '                        "cat": []\n' +
+        '                        },\n' +
+        '                        "ext": {\n' +
+        '                        "media_source": 1,\n' +
+        '                        "sourceid": 4\n' +
+        '                        },\n' +
+        '                        "imp": [\n' +
+        '                        {\n' +
+        '                        "id": "2ea18010a5634ad3abaf38a412f9717b",\n' +
+        '                        "tagid": "24248",\n' +
+        '                        "bidfloor": 1,\n' +
+        '                        "banner": {\n' +
+        '                        "w": 300,\n' +
+        '                        "h": 250,\n' +
+        '                        "pos": 4,\n' +
+        '                        "mimes": [\n' +
+        '                        "image/jpg"\n' +
+        '                        ]\n' +
+        '                        },\n' +
+        '                        "pmp": {\n' +
+        '                        "deals": [\n' +
+        '                        {\n' +
+        '                        "id": "479770",\n' +
+        '                        "at": 1,\n' +
+        '                        "bidfloor": 10,\n' +
+        '                        "wseat": [\n' +
+        '                        "test"\n' +
+        '                        ],\n' +
+        '                        "at":1,\n' +
+        '                        "media_source":1\n' +
+        '                        }\n' +
+        '                        ],\n' +
+        '                        "private_auction": 0\n' +
+        '                        }\n' +
+        '                        }\n' +
+        '                        ]\n' +
+        '                        }'; //获取json格式内容
+
+    var toufang_json_result = JSON.stringify(JSON.parse(toufang_json), null, 2);//将字符串转换成json对象
+
+    document.getElementById('out_pre').innerText= toufang_json_result ;
+
+</script>
+</html>
