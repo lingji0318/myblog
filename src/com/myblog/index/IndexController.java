@@ -10,6 +10,6 @@ public class IndexController {
     @RequestMapping("/index")
     public String index()
     {
-        return "/WEB-INF/views/user_info.jsp";
+        return "toufang_interface";
     }
 }
