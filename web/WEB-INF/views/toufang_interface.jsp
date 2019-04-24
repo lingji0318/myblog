@@ -9,10 +9,9 @@
 <html>
 <head>
     <title>toufang</title>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 </head>
 <body>
 
@@ -25,15 +24,15 @@
                         投放接口
                     </h3>
 
-                    <textarea cols="100" rows="10"></textarea>
+                    <textarea cols="100" rows="10" id="toufang_req"></textarea>
                     <div class="row clearfix">
 
                         <div class="col-md-12 column">
-                            <button type="button" class="btn btn-default btn-info">调用</button>
+                            <button type="button" class="btn btn-default btn-info" id="toufang_button">调用</button>
                         </div>
 
                     </div>
-                    <textarea cols="100" rows="10"></textarea>
+                    <textarea cols="100" rows="10" id="toufang_res"></textarea>
                 </div>
                 <div class="col-md-4 column">
                     <h3>
@@ -59,7 +58,7 @@
         '                        "title": "jumutest"\n' +
         '                        },\n' +
         '                        "page": "https://www.youku.com",\n' +
-        '                        "cat": [\n' +
+        '                        "cat": [\n'   +
         '                        "IAB1",\n' +
         '                        "IAB2",\n' +
         '                        "IAB3"\n' +
@@ -126,7 +125,25 @@
 
     var toufang_json_result = JSON.stringify(JSON.parse(toufang_json), null, 2);//将字符串转换成json对象
 
-    document.getElementById('out_pre').innerText= toufang_json_result ;
+    document.getElementById('out_pre').innerText = toufang_json_result ;
 
+
+
+    $("#toufang_button").click(function () {
+        var toufang_req=$("#toufang_req").val();
+
+        $.ajax({
+             data:{
+                 "toufang_req":toufang_req
+             },
+             type:"POST",
+             url:"/main_myblog/toufang_controller",
+             //contentType: "application/json;charset=utf-8",
+            success:function(msg){
+                 alert(msg);
+                $("#toufang_res").val(msg);
+            }
+        })
+    });
 </script>
 </html>
