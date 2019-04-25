@@ -2,6 +2,8 @@ package interface_toufang;
 
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
+
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import java.io.InputStream ;
@@ -16,8 +18,9 @@ public class test_post {
 
         public static final String POST_URL = "http://y051.ad99.cc:9001/ads?d=1";
 
-        public static void httpURLConnectionPOST(String parm) {//parm 你要post的数据
+        public static String httpURLConnectionPOST(String parm) {//parm 你要post的数据
             PrintWriter out = null;
+
             try {
                 URL url = new URL(POST_URL);
                 // 将url以open方法返回的urlConnection 连接强转为HttpURLConnection连接
@@ -64,16 +67,22 @@ public class test_post {
                 while ((line = bf.readLine()) != null) {
                     sb.append(line).append(System.getProperty("line.separator"));
                 }
-                System.out.println(sb);
+               // System.out.println(sb);
+                String sbString = sb.toString();
+                //JSONObject json = JSONObject.parseObject(jsonText);
+                //System.out.println(sbString);
+
                 bf.close(); // 日常关流
                 connection.disconnect(); // 销毁连接
+                return sbString;
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-           // return sb.toString();
+            return null;
         }
     public static void main(String[] args){
+            String result="";
             String canshu="{\n" +
                     "    \"id\": \"y051-test-t24-1468477072-0-605\",\n" +
                     "    \"site\": {\n" +
@@ -147,7 +156,8 @@ public class test_post {
                     "        }\n" +
                     "    ]\n" +
                     "}";
-        test_post.httpURLConnectionPOST(canshu);
+             result=test_post.httpURLConnectionPOST(canshu);
+             System.out.println(result);
 
     }
 }
