@@ -18,6 +18,17 @@
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#">投放</a>
+                </li>
+                <li>
+                    <a href="dmp_interface">DMP</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">待续</a>
+                </li>
+            </ul>
             <div class="row clearfix">
                 <div class="col-md-8 column">
                     <h3>
@@ -36,7 +47,7 @@
                 </div>
                 <div class="col-md-4 column">
                     <h3>
-                        接口参数
+                        投放接口参数
                     </h3>
                     <pre id="out_pre"></pre>
                 </div>

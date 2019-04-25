@@ -19,6 +19,8 @@ public class IndexController {
     {
         return "toufang_interface";
     }
+    @RequestMapping("/dmp_interface")
+    public  String dmp(){return "dmp_interface";}
 
     @RequestMapping(value="/toufang_controller",produces="text/html;charset=UTF-8")//解决ajax返回的post body有中文乱码问题
     @ResponseBody
@@ -27,4 +29,5 @@ public class IndexController {
 
         return toufang_api.httpURLConnectionPOST(toufang_req);
     }
+
 }
