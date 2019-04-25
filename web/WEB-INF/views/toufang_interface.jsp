@@ -138,9 +138,9 @@
              },
              type:"POST",
              url:"/main_myblog/toufang_controller",
-             //contentType: "application/json;charset=utf-8",
+
             success:function(msg){
-                 alert(msg);
+                 //alert(msg);
                 $("#toufang_res").val(msg);
             }
         })
