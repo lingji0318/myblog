@@ -1,9 +1,13 @@
 package com.myblog.index;
 
+
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONPObject;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 @Controller
 @RequestMapping("/main_myblog")
@@ -19,6 +23,8 @@ public class IndexController {
     @ResponseBody
     public String toufang_interface(String toufang_req )
     {
+         //String url=
+         //String toufang_req
         return toufang_req;
     }
 }
