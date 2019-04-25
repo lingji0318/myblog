@@ -7,6 +7,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import interface_toufang.toufang_api;
 
 
 @Controller
@@ -23,8 +24,7 @@ public class IndexController {
     @ResponseBody
     public String toufang_interface(String toufang_req )
     {
-         //String url=
-         //String toufang_req
-        return toufang_req;
+
+        return toufang_api.httpURLConnectionPOST(toufang_req);
     }
 }
