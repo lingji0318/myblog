@@ -15,8 +15,12 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.41</version>
         </dependency>
-
-
+        <!--引入log4j-->
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant-jakarta-log4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
     </dependencies>
 
     

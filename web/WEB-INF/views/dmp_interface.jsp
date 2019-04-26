@@ -35,7 +35,7 @@
                     <h3>
                         dmp接口
                     </h3>
-                    <textarea cols="50" rows="2" id="dmp_url">http://192.168.10.67:9393/api/v2/tag</textarea>
+                    <textarea cols="50" rows="2" id="dmp_url">http://114.112.35.45:9393/api/v2/tag</textarea>
                     <textarea cols="100" rows="10" id="dmp_req"></textarea>
                     <div class="row clearfix">
 

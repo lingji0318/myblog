@@ -44,7 +44,7 @@ public class test_post {
                 // text/plain->raw格式
                 // ;charset=utf-8 必须要，不然会出现乱码
                 //该样例使用json对象进行请求
-                connection.setRequestProperty("Content-Type", "application/x-javascript;charset=utf-8");
+                connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");
                 // 建立连接
                 connection.connect();
                 // 创建输入输出流,用于往连接里面输出携带的参数,记得设置参数编码格式
