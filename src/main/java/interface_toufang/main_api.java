@@ -15,11 +15,11 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.io.OutputStreamWriter;
 
-public class toufang_api
+public class main_api
 {
-    public static final String POST_URL = "http://y051.ad99.cc:9001/ads?d=1";
+    //public static final String POST_URL = "http://y051.ad99.cc:9001/ads?d=1";
 
-    public static String httpURLConnectionPOST(String parm) {//parm 你要post的数据
+    public static String httpURLConnectionPOST(String parm,String POST_URL) {//parm 你要post的数据
         PrintWriter out = null;
 
         try {

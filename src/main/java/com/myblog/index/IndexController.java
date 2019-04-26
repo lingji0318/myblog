@@ -1,13 +1,10 @@
 package com.myblog.index;
 
 
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.JSONPObject;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import interface_toufang.toufang_api;
+import interface_toufang.main_api;
 
 
 @Controller
@@ -24,10 +21,16 @@ public class IndexController {
 
     @RequestMapping(value="/toufang_controller",produces="text/html;charset=UTF-8")//解决ajax返回的post body有中文乱码问题
     @ResponseBody
-    public String toufang_interface(String toufang_req )
+    public String toufang_interface(String toufang_req,String toufang_url )
     {
+        return main_api.httpURLConnectionPOST(toufang_req,toufang_url);
+    }
 
-        return toufang_api.httpURLConnectionPOST(toufang_req);
+    @RequestMapping(value="/dmp_controller",produces="text/html;charset=UTF-8")//解决ajax返回的post body有中文乱码问题
+    @ResponseBody
+    public String dmp_interface(String dmp_req,String dmp_url )
+    {
+        return main_api.httpURLConnectionPOST(dmp_req,dmp_url);
     }
 
 }

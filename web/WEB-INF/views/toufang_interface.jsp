@@ -34,7 +34,7 @@
                     <h3>
                         投放接口
                     </h3>
-
+                    <textarea cols="50" rows="2" id="toufang_url">http://y051.ad99.cc:9001/ads?d=1</textarea>
                     <textarea cols="100" rows="10" id="toufang_req"></textarea>
                     <div class="row clearfix">
 
@@ -142,10 +142,11 @@
 
     $("#toufang_button").click(function () {
         var toufang_req=$("#toufang_req").val();
-
+        var toufang_url=$("#toufang_url").val();
         $.ajax({
              data:{
-                 "toufang_req":toufang_req
+                 "toufang_req":toufang_req,
+                 "toufang_url":toufang_url
              },
              type:"POST",
              url:"/main_myblog/toufang_controller",

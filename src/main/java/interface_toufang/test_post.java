@@ -16,7 +16,7 @@ import java.io.OutputStreamWriter;
 
 public class test_post {
 
-        public static final String POST_URL = "http://y051.ad99.cc:9001/ads?d=1";
+        public static final String POST_URL = "http://192.168.10.67:9393/api/v2/tag";
 
         public static String httpURLConnectionPOST(String parm) {//parm 你要post的数据
             PrintWriter out = null;
@@ -70,7 +70,7 @@ public class test_post {
                // System.out.println(sb);
                 String sbString = sb.toString();
                 //JSONObject json = JSONObject.parseObject(jsonText);
-                //System.out.println(sbString);
+                System.out.println(sbString);
 
                 bf.close(); // 日常关流
                 connection.disconnect(); // 销毁连接
@@ -84,77 +84,74 @@ public class test_post {
     public static void main(String[] args){
             String result="";
             String canshu="{\n" +
-                    "    \"id\": \"y051-test-t24-1468477072-0-605\",\n" +
-                    "    \"site\": {\n" +
-                    "        \"name\": \"youku\",\n" +
-                    "        \"ref\": \"\",\n" +
-                    "        \"content\": {\n" +
-                    "            \"title\": \"剧目定向\"\n" +
-                    "        },\n" +
-                    "        \"page\": \"https://www.youku.com\",\n" +
-                    "        \"cat\": [\n" +
-                    "            \"IAB1\",\n" +
-                    "            \"IAB2\",\n" +
-                    "            \"IAB3\"\n" +
+                    "  \"uid\": \"51A95602-458E-45A2-B993-56DBACE58E03\",\n" +
+                    "  \"dt\": 1,\n" +
+                    "  \"cm\": 0,\n" +
+                    "  \"ip\": \"1.1.1.1\",\n" +
+                    "  \"os\": \"ios\",\n" +
+                    "  \"dmp\": {\n" +
+                    "    \"mjn_dmp\": {\n" +
+                    "      \"uid\": \"\",\n" +
+                    "      \"tags\": {\n" +
+                    "        \"\": [\n" +
+                    "          \"1938\",\n" +
+                    "          \"1940\"\n" +
                     "        ]\n" +
+                    "      }\n" +
                     "    },\n" +
-                    "    \"device\": {\n" +
-                    "        \"devicetype\": 0,\n" +
-                    "        \"reqlip\": \"59.108.32.2\",\n" +
-                    "        \"ip\": \"59.108.43.2\",\n" +
-                    "        \"ua\": \"Mozilla/5.0(iPhone;CPUiPhoneOS6_0likeMacOSX)AppleWebKit/536.26(KHTML,likeGecko)Version/6.0Mobile/10A403Safari/8536.25\",\n" +
-                    "        \"didmd5\": \"04752ed011e4d27caf12a79a94d2029f\",\n" +
-                    "        \"dpidmd5\": \"2FB25AAC4555D7FFC89CA998CCE00ECC\",\n" +
-                    "        \"os\": \"Android\",\n" +
-                    "        \"ext\": {\n" +
-                    "            \"idfa\": \"8B6A3BFA-3E4A-4CFC-A2B1-2BBDD9A01C39\",\n" +
-                    "            \"mac\": \"DC7D41E352D13D60765414D53F40BC25\",\n" +
-                    "            \"macmd5\": \"DC7D41E352D13D60765414D53F40BC25\"\n" +
-                    "        }\n" +
+                    "    \"ad_dmp\": {\n" +
+                    "      \"uid\": \"\",\n" +
+                    "      \"tags\": {\n" +
+                    "        \"\": [\n" +
+                    "          \"deal1\",\n" +
+                    "          \"deal2\"\n" +
+                    "        ]\n" +
+                    "      }\n" +
                     "    },\n" +
-                    "    \"user\": {},\n" +
-                    "    \"app\": {\n" +
-                    "        \"name\": \"test_app\",\n" +
-                    "        \"ext\": {\n" +
-                    "            \"deeplink\": 0\n" +
-                    "        },\n" +
-                    "        \"bundle\": \"com.test.cn\",\n" +
-                    "        \"cat\": []\n" +
+                    "    \"gt_dmp\": {\n" +
+                    "      \"uid\": \"\",\n" +
+                    "      \"tags\": {\n" +
+                    "        \"\": [\n" +
+                    "          \"test_gt_1\"\n" +
+                    "        ]\n" +
+                    "      }\n" +
                     "    },\n" +
-                    "    \"ext\": {\n" +
-                    "        \"media_source\": 1,\n" +
-                    "        \"sourceid\": 4\n" +
+                    "    \"gm_dmp\": {\n" +
+                    "      \"uid\": \"\",\n" +
+                    "      \"tags\": {\n" +
+                    "        \"\": [\n" +
+                    "          \"1079180737\",\n" +
+                    "          \"1136406191\"\n" +
+                    "        ]\n" +
+                    "      }\n" +
                     "    },\n" +
-                    "    \"imp\": [\n" +
-                    "        {\n" +
-                    "            \"id\": \"2ea18010a5634ad3abaf38a412f9717b\",\n" +
-                    "            \"tagid\": \"24248\",\n" +
-                    "            \"bidfloor\": 1,\n" +
-                    "            \"banner\": {\n" +
-                    "                \"w\": 300,\n" +
-                    "                \"h\": 250,\n" +
-                    "                \"pos\": 4,\n" +
-                    "                \"mimes\": [\n" +
-                    "                    \"image/jpg\"\n" +
-                    "                ]\n" +
-                    "            },\n" +
-                    "            \"pmp\": {\n" +
-                    "                \"deals\": [\n" +
-                    "                    {\n" +
-                    "                        \"id\": \"479770\",\n" +
-                    "                        \"at\": 1,\n" +
-                    "                        \"bidfloor\": 10,\n" +
-                    "                        \"wseat\": [\n" +
-                    "                            \"test\"\n" +
-                    "                        ],\n" +
-                    "                        \"at\":1,\n" +
-                    "                        \"media_source\":1\n" +
-                    "                    }\n" +
-                    "                ],\n" +
-                    "                \"private_auction\": 0\n" +
-                    "            }\n" +
-                    "        }\n" +
-                    "    ]\n" +
+                    "    \"ten_dmp\": {\n" +
+                    "      \"uid\": \"tencent_user_id\",\n" +
+                    "      \"tags\": {\n" +
+                    "        \"100066\": [\n" +
+                    "          \"7\",\n" +
+                    "          \"8\"\n" +
+                    "        ],\n" +
+                    "        \"100067\": [\n" +
+                    "          \"9\",\n" +
+                    "          \"10\"\n" +
+                    "        ]\n" +
+                    "      }\n" +
+                    "    },\n" +
+                    "    \"mzapi_dmp\": {\n" +
+                    "      \"uid\": \"miaozhen_user_id\",\n" +
+                    "      \"tags\": {\n" +
+                    "        \"token1\": [\n" +
+                    "          \"10001\",\n" +
+                    "          \"10004\"\n" +
+                    "        ],\n" +
+                    "        \"token2\": [\n" +
+                    "          \"10001\",\n" +
+                    "          \"10002\"\n" +
+                    "        ]\n" +
+                    "      }\n" +
+                    "    }\n" +
+                    "  }\n" +
                     "}";
              result=test_post.httpURLConnectionPOST(canshu);
              System.out.println(result);
