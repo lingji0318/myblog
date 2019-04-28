@@ -142,6 +142,7 @@
 
 
     $("#dmp_button").click(function () {
+        $("#dmp_res").val(" ");
         var dmp_req=$("#dmp_req").val();
         var dmp_url=$("#dmp_url").val();
         $.ajax({
@@ -154,7 +155,9 @@
 
             success:function(msg){
                 //alert(msg);
-                $("#dmp_res").val(msg);
+
+                var dmp_res_json = JSON.stringify(JSON.parse(msg), null, 2);
+                $("#dmp_res").val(dmp_res_json);
             }
         })
     });

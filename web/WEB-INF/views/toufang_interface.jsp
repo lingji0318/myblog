@@ -141,6 +141,7 @@
 
 
     $("#toufang_button").click(function () {
+        $("#toufang_res").val(" ");
         var toufang_req=$("#toufang_req").val();
         var toufang_url=$("#toufang_url").val();
         $.ajax({
