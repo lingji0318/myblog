@@ -1,10 +1,13 @@
-package com.myblog.index;
+package com.myblog.indexController;
 
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import interface_toufang.main_api;
+import interface_main.main_api;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 @Controller

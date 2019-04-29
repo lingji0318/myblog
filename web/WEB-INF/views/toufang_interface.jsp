@@ -154,6 +154,7 @@
 
             success:function(msg){
                  //alert(msg);
+               // var toufang_res_json = JSON.stringify(JSON.parse(msg), null, 2);
                 $("#toufang_res").val(msg);
             }
         })
