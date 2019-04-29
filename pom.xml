@@ -15,6 +15,19 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.41</version>
         </dependency>
+        <!--引入log4j-->
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant-jakarta-log4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+       <!-- org.slf4j:osgi-over-slf4j:1.7.26-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.26</version>
+        </dependency>
 
 
     </dependencies>

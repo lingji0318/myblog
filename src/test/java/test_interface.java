@@ -1,5 +1,3 @@
-package interface_toufang;
-
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import java.io.InputStream ;

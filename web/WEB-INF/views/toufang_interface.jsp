@@ -18,12 +18,23 @@
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#">投放</a>
+                </li>
+                <li>
+                    <a href="dmp_interface">DMP</a>
+                </li>
+                <li class="disabled">
+                    <a href="#">待续</a>
+                </li>
+            </ul>
             <div class="row clearfix">
                 <div class="col-md-8 column">
                     <h3>
                         投放接口
                     </h3>
-
+                    <textarea cols="50" rows="2" id="toufang_url">http://y051.ad99.cc:9001/ads?d=1</textarea>
                     <textarea cols="100" rows="10" id="toufang_req"></textarea>
                     <div class="row clearfix">
 
@@ -36,7 +47,7 @@
                 </div>
                 <div class="col-md-4 column">
                     <h3>
-                        接口参数
+                        投放接口参数
                     </h3>
                     <pre id="out_pre"></pre>
                 </div>
@@ -130,17 +141,20 @@
 
 
     $("#toufang_button").click(function () {
+        $("#toufang_res").val(" ");
         var toufang_req=$("#toufang_req").val();
-
+        var toufang_url=$("#toufang_url").val();
         $.ajax({
              data:{
-                 "toufang_req":toufang_req
+                 "toufang_req":toufang_req,
+                 "toufang_url":toufang_url
              },
              type:"POST",
              url:"/main_myblog/toufang_controller",
 
             success:function(msg){
                  //alert(msg);
+               // var toufang_res_json = JSON.stringify(JSON.parse(msg), null, 2);
                 $("#toufang_res").val(msg);
             }
         })
