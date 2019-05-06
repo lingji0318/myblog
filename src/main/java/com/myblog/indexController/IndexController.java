@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 @RequestMapping("/main_myblog")
 public class IndexController {
 
+    // urlcontroller
     @RequestMapping("/index")
     public String index()
     {
@@ -28,7 +29,7 @@ public class IndexController {
 
 
 
-
+    //接口controller
     @RequestMapping(value="/toufang_controller",produces="text/html;charset=UTF-8")//解决ajax返回的post body有中文乱码问题
     @ResponseBody
     public String toufang_interface(String toufang_req,String toufang_url )
