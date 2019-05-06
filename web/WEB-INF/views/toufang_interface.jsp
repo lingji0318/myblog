@@ -25,8 +25,8 @@
                 <li>
                     <a href="dmp_interface">DMP</a>
                 </li>
-                <li class="disabled">
-                    <a href="#">待续</a>
+                <li >
+                    <a href="adx_interface">ADX</a>
                 </li>
             </ul>
             <div class="row clearfix">

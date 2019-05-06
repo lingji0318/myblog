@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 @RequestMapping("/main_myblog")
 public class IndexController {
 
+    // urlcontroller
     @RequestMapping("/index")
     public String index()
     {
@@ -21,7 +22,14 @@ public class IndexController {
     }
     @RequestMapping("/dmp_interface")
     public  String dmp(){return "dmp_interface";}
+    @RequestMapping("/adx_interface")
+    public  String adx(){return "adx_interface";}
 
+
+
+
+
+    //接口controller
     @RequestMapping(value="/toufang_controller",produces="text/html;charset=UTF-8")//解决ajax返回的post body有中文乱码问题
     @ResponseBody
     public String toufang_interface(String toufang_req,String toufang_url )
@@ -34,6 +42,13 @@ public class IndexController {
     public String dmp_interface(String dmp_req,String dmp_url )
     {
         return main_api.httpURLConnectionPOST(dmp_req,dmp_url);
+    }
+
+    @RequestMapping(value="/adx_controller",produces="text/html;charset=UTF-8")//解决ajax返回的post body有中文乱码问题
+    @ResponseBody
+    public String adx_interface(String adx_req,String adx_url )
+    {
+        return main_api.httpURLConnectionPOST(adx_req,adx_url);
     }
 
 }

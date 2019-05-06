@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 
 public class test_post {
 
-        public static final String POST_URL = "http://192.168.10.67:9393/api/v2/tag";
+        public static final String POST_URL = "http://test.s.x.xtgreat.com/cx?d=1&secret=miaozhen1234";
 
         public static String httpURLConnectionPOST(String parm) {//parm 你要post的数据
             PrintWriter out = null;
@@ -62,7 +62,7 @@ public class test_post {
                // System.out.println(sb);
                 String sbString = sb.toString();
                 //JSONObject json = JSONObject.parseObject(jsonText);
-                System.out.println(sbString);
+               // System.out.println(sbString);
 
                 bf.close(); // 日常关流
                 connection.disconnect(); // 销毁连接
@@ -76,74 +76,24 @@ public class test_post {
     public static void main(String[] args){
             String result="";
             String canshu="{\n" +
-                    "  \"uid\": \"51A95602-458E-45A2-B993-56DBACE58E03\",\n" +
-                    "  \"dt\": 1,\n" +
-                    "  \"cm\": 0,\n" +
-                    "  \"ip\": \"1.1.1.1\",\n" +
-                    "  \"os\": \"ios\",\n" +
-                    "  \"dmp\": {\n" +
-                    "    \"mjn_dmp\": {\n" +
-                    "      \"uid\": \"\",\n" +
-                    "      \"tags\": {\n" +
-                    "        \"\": [\n" +
-                    "          \"1938\",\n" +
-                    "          \"1940\"\n" +
-                    "        ]\n" +
-                    "      }\n" +
-                    "    },\n" +
-                    "    \"ad_dmp\": {\n" +
-                    "      \"uid\": \"\",\n" +
-                    "      \"tags\": {\n" +
-                    "        \"\": [\n" +
-                    "          \"deal1\",\n" +
-                    "          \"deal2\"\n" +
-                    "        ]\n" +
-                    "      }\n" +
-                    "    },\n" +
-                    "    \"gt_dmp\": {\n" +
-                    "      \"uid\": \"\",\n" +
-                    "      \"tags\": {\n" +
-                    "        \"\": [\n" +
-                    "          \"test_gt_1\"\n" +
-                    "        ]\n" +
-                    "      }\n" +
-                    "    },\n" +
-                    "    \"gm_dmp\": {\n" +
-                    "      \"uid\": \"\",\n" +
-                    "      \"tags\": {\n" +
-                    "        \"\": [\n" +
-                    "          \"1079180737\",\n" +
-                    "          \"1136406191\"\n" +
-                    "        ]\n" +
-                    "      }\n" +
-                    "    },\n" +
-                    "    \"ten_dmp\": {\n" +
-                    "      \"uid\": \"tencent_user_id\",\n" +
-                    "      \"tags\": {\n" +
-                    "        \"100066\": [\n" +
-                    "          \"7\",\n" +
-                    "          \"8\"\n" +
-                    "        ],\n" +
-                    "        \"100067\": [\n" +
-                    "          \"9\",\n" +
-                    "          \"10\"\n" +
-                    "        ]\n" +
-                    "      }\n" +
-                    "    },\n" +
-                    "    \"mzapi_dmp\": {\n" +
-                    "      \"uid\": \"miaozhen_user_id\",\n" +
-                    "      \"tags\": {\n" +
-                    "        \"token1\": [\n" +
-                    "          \"10001\",\n" +
-                    "          \"10004\"\n" +
-                    "        ],\n" +
-                    "        \"token2\": [\n" +
-                    "          \"10001\",\n" +
-                    "          \"10002\"\n" +
-                    "        ]\n" +
-                    "      }\n" +
-                    "    }\n" +
-                    "  }\n" +
+                    "\"version\": \"1.0\",\n" +
+                    "\"pid\": \"24248\",\n" +
+                    "\"action_type\": 1,\n" +
+                    "\"device\": {\n" +
+                    "\"devicetype\": 0,\n" +
+                    "\"os\": 0,\n" +
+                    "\"imei_md5\": \"F1C7976BC455CB548BFC550EB7687F06\",\n" +
+                    "\"m_ip\": \"14.18.52.69\",\n" +
+                    "\"m_ua\": \"Mozilla/5.0(Linux;Android4.0.4;GT-I9220 Build/IMM76D)\",\n" +
+                    "\"m_ts\": \"1374225975\",\n" +
+                    "\"m_dvw\": 300,\n" +
+                    "\"m_dvh\": 250\n" +
+                    "},\n" +
+                    "\"app\": {\n" +
+                    "\"m_app\": \"wantu\",\n" +
+                    "\"m_app_pn\": \"com.weitu.wantu\"\n" +
+                    "},\n" +
+                    "\"reqid\": \"123\"\n" +
                     "}";
              result=test_post.httpURLConnectionPOST(canshu);
              System.out.println(result);
